@@ -1,7 +1,7 @@
 ####System for record students and grades
 
 ##Story 1 - students record
-print("-"*20, "Welcome to the system of ", "-"*20)
+print("-"*20, "Welcome to the university system ", "-"*20)
 
 students = []
 
@@ -14,33 +14,34 @@ while True:
     try:
         if option == 1:
             number_students = int(input("Enter the number of students to record: "))
-
-            for n in range(number_students):
-                print("\n ", "-"*65,"")
-                full_name = input("\nEnter the fullname: ")
-                subjects = []
-                grades = []
-                number_subjects = int(input("\nEnter the number of subjects: "))
-            
-                for m in range(number_subjects):
-                    subject = input("\nAdd the subject: ")
-                    grade = float(input("Enter de grade of subject: "))
+            print ("¡¡¡only introduce from 1 to 10 students!!!")
+            if number_students >= 0 and number_students <= 10:
+                for n in range(number_students):
                     print("\n ", "-"*65,"")
+                    full_name = input("\nEnter the fullname: ")
+                    subjects = []
+                    number_subjects = int(input("\nEnter the number of subjects: "))
+                
+                    for m in range(number_subjects):
+                        subject = input("\nAdd the subject: ")
+                        grade = float(input("Enter de grade of subject: "))
 
-                    subjects.append(subject)
-                    grades.append(grade)
-            students.append({
-                "fullname": full_name,
-                "subjects": subjects,
-                "grades": grades
-                        })
+                        print("\n ", "-"*65,"")
+
+                        subjects.append({"subjec": subject,
+                                        "grad": grade})
+                    students.append({
+                        "fullname": full_name,
+                        "subjects": subjects
+                                })
         elif option == 2:
+            {"math": 3, "english": 2}
             for i, list in enumerate(students):
                 print(f"\n{i+1}. Student: {list['fullname']}")
-                for sub in range(len(list["subjects"])):
-                    print(f"Subject: {list['subjects'][sub]} - Grade: {list['grades'][sub]}")
+                for sub in list["subjects"]:
+                    print(f"Subject: {sub['subjec']} - Grade: {sub['grad']}")
     except ValueError:
-        print ("\nEnter a number int")              
+        print ("\nEnter a int number")              
 
 ##Story 2 - record of subjects and grades
 
