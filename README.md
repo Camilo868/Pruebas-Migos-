@@ -1,4 +1,4 @@
 # Pruebas-Migos-
 Los Migos
 
-## Wally no vale monda
+## Wally is a good person
